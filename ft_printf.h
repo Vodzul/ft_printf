@@ -16,10 +16,11 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-int	ft_printf(const char *str, ...);
+int	ft_printf(const char *format, ...);
+int	detectformat(va_list arg, char c);
 int	ft_putchar(int c);
 int	ft_putstr(char *str);
-int	ft_putnbr(int a);
+int	ft_putnbr(long nb);
 int	ft_putsigned(unsigned int nb);
 int	ft_puthex(unsigned long nb, int c);
 int	ft_putptr(unsigned long ptr);
