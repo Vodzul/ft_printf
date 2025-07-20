@@ -1,16 +1,13 @@
 
 #include "ft_printf.h"
 
-int	ft_putptr(unsigned long ptr)
+void	ft_putptr(unsigned long ptr, int *count)
 {
-	static int	count = 0;
-
 	if (ptr == 0)
 	{
-		count += write(1, "(nil)", 5);
-		return (count);
+		*count += write(1, "(nil)", 5);
+		return ;
 	}
-	count += write(1, "0x", 2);
-	count += ft_puthex(ptr, 'x');
-	return (count);
+	*count += ft_putstr("0x");
+	ft_puthex(ptr, 'x', count);
 }

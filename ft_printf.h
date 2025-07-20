@@ -17,12 +17,12 @@
 # include <unistd.h>
 
 int	ft_printf(const char *format, ...);
-int	detectformat(va_list arg, char c);
 int	ft_putchar(int c);
 int	ft_putstr(char *str);
-int	ft_putnbr(long nb);
-int	ft_putsigned(unsigned int nb);
-int	ft_puthex(unsigned long nb, int c);
-int	ft_putptr(unsigned long ptr);
+void	detectformat(va_list arg, char c, int *count);
+void	ft_putnbr(long nb, int *count);
+void	ft_putsigned(unsigned int nb, int *count);
+void	ft_puthex(unsigned long nb, char c, int *count);
+void	ft_putptr(unsigned long ptr, int *count);
 
 #endif
